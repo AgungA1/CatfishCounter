@@ -15,7 +15,6 @@ import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.task.core.BaseOptions
 import org.tensorflow.lite.task.vision.detector.Detection as TFLiteDetection
 import org.tensorflow.lite.task.vision.detector.ObjectDetector
-import kotlin.math.min
 
 enum class AccelerationType {
     CPU, GPU, NNAPI
@@ -26,7 +25,7 @@ class ObjectDetection(private val context: Context) {
     private var currentAcceleration = AccelerationType.CPU
 
     private val DETECTION_THRESHOLD = 0.7f
-    private val MAX_DETECTIONS = 10
+    private val MAX_DETECTIONS = 35
     var nmsIoUThreshold = 0.4
 
     init {
